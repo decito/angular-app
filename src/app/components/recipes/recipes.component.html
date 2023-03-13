@@ -1,5 +1,10 @@
 <section class="flex gap-8">
-  <app-recipe-list class="w-5/12"></app-recipe-list>
+  <app-recipe-list class="w-5/12" (itemToEmit)="assignSelectedRecipe($event)"></app-recipe-list>
 
-  <app-recipe-detail class="w-7/12"></app-recipe-detail>
+  <div class="w-7/12">
+    <app-recipe-detail *ngIf="selectedRecipe; else infoText" [recipe]="selectedRecipe"></app-recipe-detail>
+    <ng-template #infoText>
+      <p>Select a recipe</p>
+    </ng-template>
+  </div>
 </section>

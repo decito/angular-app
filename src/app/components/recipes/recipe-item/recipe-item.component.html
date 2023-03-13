@@ -1,1 +1,11 @@
-<p>recipe-item works!</p>
+<a href="#" (click)="onItemClick()">
+  <article class="flex justify-between w-full px-5 py-4 border border-gray-300 rounded bg-gray-200">
+    <div>
+      <h3 class="text-lg font-medium">{{ item.name }}</h3>
+
+      <p>{{ item.description }}</p>
+    </div>
+
+    <img [src]="item.imgPath" [alt]="item.name" class="w-14 h-14">
+  </article>
+</a>

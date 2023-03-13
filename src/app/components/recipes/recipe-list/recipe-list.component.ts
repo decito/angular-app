@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 import { Recipe } from 'src/app/models/recipe/recipe.model';
 
@@ -9,18 +9,20 @@ import { Recipe } from 'src/app/models/recipe/recipe.model';
 export class RecipeListComponent {
   recipes: Recipe[] = [
     new Recipe(
-      'Dummy Recipe',
-      'This is a dummy recipe.',
+      'Dummy Recipe 1',
+      'This is the first dummy recipe.',
       'http://www.alittletipsy.com/wp-content/uploads/2014/05/The-Best-Hambuger-Recipe-Mozzarella-Burgers-square.jpg'
     ),
     new Recipe(
-      'Dummy Recipe',
-      'This is a dummy recipe.',
+      'Dummy Recipe 2',
+      'This is the second dummy recipe.',
       'http://www.alittletipsy.com/wp-content/uploads/2014/05/The-Best-Hambuger-Recipe-Mozzarella-Burgers-square.jpg'
     ),
   ]
 
-  constructor() { }
+  @Output() itemToEmit = new EventEmitter<Recipe>()
 
-  ngOnInit() { }
+  emitItem(recipe: Recipe) {
+    this.itemToEmit.emit(recipe)
+  }
 }
