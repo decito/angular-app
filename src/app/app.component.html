@@ -1,9 +1,9 @@
 <main>
-  <app-header></app-header>
+  <app-header (curRoute)="displayRoute($event)"></app-header>
 
   <section class="max-w-screen-xl mx-auto py-8 px-4">
-    <app-recipes></app-recipes>
+    <app-recipes *ngIf="curDisRoute === 'recipes'"></app-recipes>
 
-    <app-shopping-list></app-shopping-list>
+    <app-shopping-list *ngIf="curDisRoute === 'shopping'"></app-shopping-list>
   </section>
 </main>

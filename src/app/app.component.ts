@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-app';
+  title = 'angular-app'
+
+  curDisRoute: string = 'recipes'
+
+  displayRoute(r: string) {
+    this.curDisRoute = r
+  }
 }
