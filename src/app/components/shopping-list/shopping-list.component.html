@@ -1,7 +1,12 @@
 <section>
   <app-shopping-list-edit></app-shopping-list-edit>
 
-  <hr>
+  <hr class="my-4">
 
-  <p>The List</p>
+  <ul class="flex flex-col gap-2">
+    <a class="cursor-pointer px-5 py-4 border border-gray-300 rounded bg-gray-200"
+      *ngFor="let ingredient of ingredients">
+      {{ ingredient.name }} ({{ ingredient.amount }})
+    </a>
+  </ul>
 </section>
