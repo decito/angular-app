@@ -1,9 +1,17 @@
 <main>
   <app-header (curRoute)="displayRoute($event)"></app-header>
 
-  <section class="max-w-screen-xl mx-auto py-8 px-4">
+  <!-- Mostrando um caso de uso do ngSwitch -->
+  <template-comment *templateComment class="max-w-screen-xl mx-auto py-8 px-4">
     <app-recipes *ngIf="curDisRoute === 'recipes'"></app-recipes>
 
     <app-shopping-list *ngIf="curDisRoute === 'shopping'"></app-shopping-list>
+  </template-comment>
+  <!-- < /> -->
+
+  <section class="max-w-screen-xl mx-auto py-8 px-4" [ngSwitch]="curDisRoute">
+    <app-recipes *ngSwitchDefault></app-recipes>
+
+    <app-shopping-list *ngSwitchCase="'shopping'"></app-shopping-list>
   </section>
 </main>

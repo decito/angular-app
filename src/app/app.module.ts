@@ -11,6 +11,9 @@ import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './components/shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-item.component';
+import { BasicHighlightDirective } from './shared/basic-highlight.directive';
+import { UnlessDirective } from './shared/unless.directive';
+import { HtmlCommentDirective } from './shared/html-comment.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-ite
     RecipeDetailComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    BasicHighlightDirective,
+    UnlessDirective,
+    HtmlCommentDirective
   ],
   imports: [
     BrowserModule,
