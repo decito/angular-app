@@ -1,9 +1,9 @@
 <section class="border-b border-b-gray-300 bg-gray-200">
-  <nav class="flex justify-between p-4 max-w-[1440px] mx-auto items-center">
+  <nav class="flex justify-between max-w-[1440px] mx-auto items-center py-4 px-5">
     <div class="flex gap-10 items-center">
       <h1 class="text-2xl font-semibold"><a href="#">Recipe Book</a></h1>
 
-      <ul class="flex gap-4">
+      <ul class="flex gap-3">
         <li><a (click)="changeRoute('recipes')" href="#" class="hover:font-bold transition-all"
             [ngClass]="{'font-bold underline': isRecipeCurRoute()}">Recipes</a></li>
 
@@ -12,19 +12,27 @@
       </ul>
     </div>
 
-    <div class="flex gap-10">
-      <ul class="">
-        <li>
-          <a href="#" class="hidden lg:block">Menu <i class="fa-solid fa-caret-down"></i></a>
+    <ul class="">
+      <li toggleController class="relative">
+        <a appDropdown href="#" class="hidden lg:block">
+          Menu
+          <i class="fa-solid fa-caret-down"></i>
+        </a>
 
-          <a href="#" class="lg:hidden"><i class="fa-solid fa-bars"></i></a>
+        <a appDropdown href="#" class="lg:hidden">
+          <i class="fa-solid fa-bars"></i>
+        </a>
 
-          <ul class="hidden">
-            <li><a href="#">Save Data</a></li>
+        <ul
+          class="hidden open:flex left-[-4rem] min-w-[8rem] top-11 flex-col items-center gap-2 absolute rounded bg-white p-4 border border-gray-300 shadow-lg"
+          toggle>
+          <li><a href="#">Save Data</a></li>
 
-            <li><a href="#">Fetch Data</a></li>
-          </ul>
-      </ul>
-    </div>
+          <hr class="w-full">
+
+          <li><a href="#">Fetch Data</a></li>
+        </ul>
+      </li>
+    </ul>
   </nav>
 </section>

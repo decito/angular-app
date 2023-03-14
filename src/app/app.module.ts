@@ -14,6 +14,7 @@ import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-ite
 import { BasicHighlightDirective } from './shared/basic-highlight.directive';
 import { UnlessDirective } from './shared/unless.directive';
 import { HtmlCommentDirective } from './shared/html-comment.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HtmlCommentDirective } from './shared/html-comment.directive';
     RecipeItemComponent,
     BasicHighlightDirective,
     UnlessDirective,
-    HtmlCommentDirective
+    HtmlCommentDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
