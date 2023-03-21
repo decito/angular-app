@@ -2,23 +2,42 @@ import { EventEmitter, Injectable } from "@angular/core"
 
 import { Recipe } from "src/app/models/recipe/recipe.model"
 
+import { Ingredient } from "src/app/models/shopping-list/ingredient.model"
+import { ShoppingService } from "./shopping.service"
+
 @Injectable({ providedIn: 'root' })
 export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe(
-      'Dummy Recipe 1',
-      'This is the first dummy recipe.',
-      'http://www.alittletipsy.com/wp-content/uploads/2014/05/The-Best-Hambuger-Recipe-Mozzarella-Burgers-square.jpg'
+      'Tasty Schinitzel',
+      'A super-tasty Schinitzel - just awesome!',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Israeli_schnitzel_and_pasta.jpg/1280px-Israeli_schnitzel_and_pasta.jpg',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('Fried Potatos', 20)
+      ]
     ),
     new Recipe(
-      'Dummy Recipe 2',
-      'This is the second dummy recipe.',
-      'http://www.alittletipsy.com/wp-content/uploads/2014/05/The-Best-Hambuger-Recipe-Mozzarella-Burgers-square.jpg'
+      'Special Touched Burger',
+      'Havenly sent burger. Addiction warning!',
+      'http://www.alittletipsy.com/wp-content/uploads/2014/05/The-Best-Hambuger-Recipe-Mozzarella-Burgers-square.jpg',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('Tomatoes', 2),
+        new Ingredient('Leaves', 2),
+        new Ingredient('Buns', 1),
+      ]
     ),
   ]
 
+  constructor(private shoppingService: ShoppingService) { }
+
   getRecipes() {
     return this.recipes.slice()
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    ingredients.forEach(i => this.shoppingService.addIngredient(i))
   }
 
   recipeSelected = new EventEmitter<Recipe>()
