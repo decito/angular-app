@@ -4,7 +4,7 @@ import { Recipe } from "src/app/models/recipe/recipe.model"
 
 @Injectable({ providedIn: 'root' })
 export class RecipeService {
-  recipes: Recipe[] = [
+  private recipes: Recipe[] = [
     new Recipe(
       'Dummy Recipe 1',
       'This is the first dummy recipe.',
