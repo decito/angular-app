@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute, Params } from '@angular/router'
+import { Subscription } from 'rxjs/internal/Subscription'
 
 import { RecipesService } from '~/services/recipes.service'
 
 import { Recipe } from '~/models/recipe/recipe.model'
-import { ActivatedRoute, Params } from '@angular/router'
-import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-recipe-detail',
