@@ -4,7 +4,8 @@
   </button>
 
   <app-recipe-item
-    *ngFor="let recipe of recipes"
+    *ngFor="let recipe of recipes; let i = index"
     [item]="recipe"
+    [index]="i"
   ></app-recipe-item>
 </section>
