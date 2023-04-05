@@ -34,7 +34,11 @@ export class RecipesService {
   }
 
   getRecipe(i: number) {
-    return this.recipes.slice()[i]
+    const item = this.recipes.slice()[i]
+
+    this.recipeSelected.emit(item)
+
+    return item
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
