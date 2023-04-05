@@ -6,14 +6,14 @@ import {
   HostListener,
   HostBinding,
   Input
-} from "@angular/core";
+} from '@angular/core'
 
 @Directive({
   selector: '[appBasicHighlight]'
 })
 export class BasicHighlightDirective implements OnInit {
-  @Input() defaultColor: string = 'transparent'
-  @Input('appBasicHighlight') highlightColor: string = 'rgb(22, 163, 74)'
+  @Input() defaultColor = 'transparent'
+  @Input('appBasicHighlight') highlightColor = 'rgb(22, 163, 74)'
 
   /* A propriedade acima está com o mesmo nome do selector da diretiva.
    * Portanto, ao inves de usar no HTML como sendo, ex:
@@ -23,22 +23,25 @@ export class BasicHighlightDirective implements OnInit {
    * A chamada para o input hightlightColor passa a ser a própria diretiva.
    *
    * <p [appBasicHightlight]="foo" [defaultColor]="bar" />
-  */
+   */
 
   @HostBinding('style.backgroundColor') backgroundColor: string
 
-  constructor(private elRef: ElementRef<HTMLParagraphElement>, private renderer: Renderer2) { }
+  constructor(
+    private elRef: ElementRef<HTMLParagraphElement>,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit() {
     /*  BAD PRACTICE:
      *
      * this.elRef.nativeElement.style.backgroundColor = green
-    */
+     */
 
     /*  BETTER PRACTICE, BUT REPLACED BY HOSTLISTENER:
      *
      * this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'green')
-    */
+     */
 
     this.backgroundColor = this.defaultColor
   }
@@ -47,7 +50,7 @@ export class BasicHighlightDirective implements OnInit {
     /*  No need to use anymore since HostBinding already target the style.backgroundColor:
      *
      * this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'green')
-    */
+     */
 
     this.backgroundColor = this.highlightColor
   }
@@ -56,7 +59,7 @@ export class BasicHighlightDirective implements OnInit {
     /*  No need to use anymore since HostBinding already target the style.backgroundColor:
      *
      * this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'transparent')
-    */
+     */
 
     this.backgroundColor = this.defaultColor
   }

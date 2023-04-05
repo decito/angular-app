@@ -1,6 +1,6 @@
-import { EventEmitter, Injectable } from "@angular/core"
+import { EventEmitter, Injectable } from '@angular/core'
 
-import { Ingredient } from "src/app/models/shopping-list/ingredient.model"
+import { Ingredient } from '~/models/shopping-list/ingredient.model'
 
 @Injectable({ providedIn: 'root' })
 export class ShoppingService {

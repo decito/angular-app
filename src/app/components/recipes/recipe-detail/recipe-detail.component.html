@@ -1,28 +1,33 @@
 <section class="flex flex-col gap-4">
-  <div class="w-64 h-64 rounded-xl bg-center bg-cover" [ngStyle]="{backgroundImage: 'url(' + recipe.imgPath + ')'}">
-  </div>
+  <div
+    class="h-64 w-64 rounded-xl bg-cover bg-center"
+    [ngStyle]="{ backgroundImage: 'url(' + recipe.imgPath + ')' }"
+  ></div>
 
   <h3 class="text-lg font-medium">{{ recipe.name }}</h3>
 
   <p>{{ recipe.description }}</p>
 
-  <ul class="w-2/3 bg-gray-200 border border-gray-300 rounded">
+  <ul class="w-2/3 rounded border border-gray-300 bg-gray-200">
     <li *ngFor="let ingredient of recipe.ingredients">
-      {{ingredient.amount}} {{ ingredient.name }}
+      {{ ingredient.amount }} {{ ingredient.name }}
     </li>
   </ul>
 
   <footer toggleController>
-    <button class="rounded px-3 py-2 bg-blue-500 text-white w-fit" appDropdown>
+    <button class="w-fit rounded bg-blue-500 px-3 py-2 text-white" appDropdown>
       Manage Recipe
 
       <i class="fa-solid fa-caret-down"></i>
     </button>
 
     <ul
-      class="hidden open:flex rounded mt-0.5 border border-blue-700 bg-blue-500 text-white p-2 flex-col gap-2 w-fit shadow-lg"
-      toggle>
-      <li><a href="#" (click)="addToList()">Add Ingredients to Shopping List</a></li>
+      class="mt-0.5 hidden w-fit flex-col gap-2 rounded border border-blue-700 bg-blue-500 p-2 text-white shadow-lg open:flex"
+      toggle
+    >
+      <li>
+        <a href="#" (click)="addToList()">Add Ingredients to Shopping List</a>
+      </li>
 
       <li><a href="#">Edit Recipe</a></li>
 

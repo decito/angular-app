@@ -1,4 +1,4 @@
-import { Directive, HostListener } from "@angular/core";
+import { Directive, HostListener } from '@angular/core'
 
 @Directive({
   selector: '[appDropdown]'
@@ -50,7 +50,6 @@ export class DropdownDirective {
 
   //     el = el.parentNode as HTMLElement
   //   }
-
 
   //   el.childNodes.forEach(childNode => {
   //     if (childNode.nodeType === Node.ELEMENT_NODE) {

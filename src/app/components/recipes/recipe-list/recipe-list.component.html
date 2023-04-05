@@ -1,5 +1,10 @@
 <section class="flex flex-col gap-4">
-  <button class="rounded px-3 py-2 bg-green-600 text-white w-fit">New Recipe</button>
+  <button class="w-fit rounded bg-green-600 px-3 py-2 text-white">
+    New Recipe
+  </button>
 
-  <app-recipe-item *ngFor="let recipe of recipes" [item]="recipe"></app-recipe-item>
+  <app-recipe-item
+    *ngFor="let recipe of recipes"
+    [item]="recipe"
+  ></app-recipe-item>
 </section>

@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  input {
+    @apply bg-slate-500 p-2;
+  }
+
+  router-outlet {
+    @apply hidden;
+  }
+}
+
+@layer components {
+  a.router-link {
+    @apply transition-all hover:font-bold;
+  }
+
+  a.router-link-active {
+    @apply font-bold underline;
+  }
+
+  .f-col {
+    @apply flex flex-col;
+  }
+
+  .card-server {
+    @apply flex w-96 items-center justify-between rounded border border-gray-300 p-4 transition-colors hover:bg-slate-700;
+  }
+}

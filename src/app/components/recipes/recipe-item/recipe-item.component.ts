@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core'
 
-import { RecipeService } from 'src/app/services/recipe.service'
+import { RecipesService } from '~/services/recipes.service'
 
-import { Recipe } from 'src/app/models/recipe/recipe.model'
+import { Recipe } from '~/models/recipe/recipe.model'
 
 @Component({
   selector: 'app-recipe-item',
@@ -11,9 +11,9 @@ import { Recipe } from 'src/app/models/recipe/recipe.model'
 export class RecipeItemComponent {
   @Input() item: Recipe
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private RecipesService: RecipesService) {}
 
   selectRecipe() {
-    this.recipeService.recipeSelected.emit(this.item)
+    this.RecipesService.recipeSelected.emit(this.item)
   }
 }

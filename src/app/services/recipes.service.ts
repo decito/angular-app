@@ -1,21 +1,18 @@
-import { EventEmitter, Injectable } from "@angular/core"
+import { EventEmitter, Injectable } from '@angular/core'
 
-import { Recipe } from "src/app/models/recipe/recipe.model"
+import { Recipe } from '~/models/recipe/recipe.model'
 
-import { Ingredient } from "src/app/models/shopping-list/ingredient.model"
-import { ShoppingService } from "./shopping.service"
+import { Ingredient } from '~/models/shopping-list/ingredient.model'
+import { ShoppingService } from './shopping.service'
 
 @Injectable({ providedIn: 'root' })
-export class RecipeService {
+export class RecipesService {
   private recipes: Recipe[] = [
     new Recipe(
       'Tasty Schinitzel',
       'A super-tasty Schinitzel - just awesome!',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Israeli_schnitzel_and_pasta.jpg/1280px-Israeli_schnitzel_and_pasta.jpg',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('Fried Potatos', 20)
-      ]
+      [new Ingredient('Meat', 1), new Ingredient('Fried Potatos', 20)]
     ),
     new Recipe(
       'Special Touched Burger',
@@ -25,12 +22,12 @@ export class RecipeService {
         new Ingredient('Meat', 1),
         new Ingredient('Tomatoes', 2),
         new Ingredient('Leaves', 2),
-        new Ingredient('Buns', 1),
+        new Ingredient('Buns', 1)
       ]
-    ),
+    )
   ]
 
-  constructor(private shoppingService: ShoppingService) { }
+  constructor(private shoppingService: ShoppingService) {}
 
   getRecipes() {
     return this.recipes.slice()

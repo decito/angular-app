@@ -1,42 +1,40 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { FormsModule } from '@angular/forms'
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { RecipesComponent } from './components/recipes/recipes.component';
-import { RecipeListComponent } from './components/recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe-detail.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
-import { ShoppingListEditComponent } from './components/shopping-list/shopping-list-edit/shopping-list-edit.component';
-import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-item.component';
-import { BasicHighlightDirective } from './shared/basic-highlight.directive';
-import { UnlessDirective } from './shared/unless.directive';
-import { HtmlCommentDirective } from './shared/html-comment.directive';
-import { DropdownDirective } from './shared/dropdown.directive';
+import { AppRoutingModule } from './app-routing.module'
+
+import { AppComponent } from './app.component'
+
+import { BasicHighlightDirective } from './shared/basic-highlight.directive'
+import { DropdownDirective } from './shared/dropdown.directive'
+import { HtmlCommentDirective } from './shared/html-comment.directive'
+import { UnlessDirective } from './shared/unless.directive'
+
+import { HeaderComponent } from './components/header/header.component'
+import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe-detail.component'
+import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-item.component'
+import { RecipeListComponent } from './components/recipes/recipe-list/recipe-list.component'
+import { RecipesComponent } from './components/recipes/recipes.component'
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component'
+import { ShoppingListEditComponent } from './components/shopping-list/shopping-list-edit/shopping-list-edit.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    BasicHighlightDirective,
+    DropdownDirective,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
+    HtmlCommentDirective,
     RecipeDetailComponent,
+    RecipeItemComponent,
+    RecipeListComponent,
+    RecipesComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    RecipeItemComponent,
-    BasicHighlightDirective,
-    UnlessDirective,
-    HtmlCommentDirective,
-    DropdownDirective
+    UnlessDirective
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-  ],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

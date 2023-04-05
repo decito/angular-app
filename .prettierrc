@@ -1,0 +1,8 @@
+{
+  "arrowParens": "avoid",
+  "editorconfig": true,
+  "quoteProps": "as-needed",
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "none"
+}

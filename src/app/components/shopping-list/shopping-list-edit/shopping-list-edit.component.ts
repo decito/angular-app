@@ -1,8 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core'
 
-import { ShoppingService } from 'src/app/services/shopping.service'
+import { ShoppingService } from '~/services/shopping.service'
 
-import { Ingredient } from 'src/app/models/shopping-list/ingredient.model'
+import { Ingredient } from '~/models/shopping-list/ingredient.model'
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -12,7 +12,7 @@ export class ShoppingListEditComponent {
   @ViewChild('nameInput') nameInputRef: ElementRef
   @ViewChild('amountInput') amountInputRef: ElementRef
 
-  constructor(private shoppingService: ShoppingService) { }
+  constructor(private shoppingService: ShoppingService) {}
 
   onAddItem() {
     const ingName = this.nameInputRef.nativeElement.value
