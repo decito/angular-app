@@ -1,38 +1,16 @@
 <section class="flex gap-8">
   <app-recipe-list class="w-5/12"></app-recipe-list>
 
-  <!-- Mostrando um caso de uso da diretiva custom appUnless -->
-  <appTemplateComment class="w-7/12" *templateComment>
-    <app-recipe-detail
-      *ngIf="selectedRecipe; else infoText"
-      [recipe]="selectedRecipe"
-    ></app-recipe-detail>
-
-    <ng-template #infoText>
-      <p
-        [appBasicHighlight]="'rgb(253, 224, 71)'"
-        [defaultColor]="'rgb(229, 231, 235)'"
-        class="cursor-default rounded p-2"
-      >
-        Select a recipe or hover me
-      </p>
-    </ng-template>
-  </appTemplateComment>
-  <!-- < /> -->
-
   <div class="w-7/12">
-    <app-recipe-detail
-      *ngIf="selectedRecipe"
-      [recipe]="selectedRecipe"
-    ></app-recipe-detail>
-
     <p
-      *appUnless="selectedRecipe"
+      *ngIf="!selectedRecipe"
       [appBasicHighlight]="'rgb(253, 224, 71)'"
       [defaultColor]="'rgb(229, 231, 235)'"
       class="cursor-default rounded p-2"
     >
       Select a recipe or hover me
     </p>
+
+    <router-outlet></router-outlet>
   </div>
 </section>

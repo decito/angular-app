@@ -33,6 +33,10 @@ export class RecipesService {
     return this.recipes.slice()
   }
 
+  getRecipe(i: number) {
+    return this.recipes.slice()[i]
+  }
+
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     ingredients.forEach(i => this.shoppingService.addIngredient(i))
   }
