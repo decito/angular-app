@@ -12,7 +12,7 @@
   }
 
   input {
-    @apply bg-slate-500 p-2;
+    @apply p-2 dark:bg-slate-500;
   }
 
   router-outlet {
