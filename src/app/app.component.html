@@ -1,20 +1,6 @@
 <main>
-  <app-header (curRoute)="displayRoute($event)"></app-header>
+  <app-header></app-header>
 
-  <!-- <appTemplateComment
-    *templateComment
-    class="mx-auto max-w-screen-xl py-8 px-4"
-  >
-    <app-recipes *ngIf="curDisRoute === 'recipes'"></app-recipes>
-
-    <app-shopping-list *ngIf="curDisRoute === 'shopping'"></app-shopping-list>
-  </appTemplateComment>
-
-  <section class="mx-auto max-w-screen-xl py-8 px-4" [ngSwitch]="curDisRoute">
-    <app-recipes *ngSwitchDefault></app-recipes>
-
-    <app-shopping-list *ngSwitchCase="'shopping'"></app-shopping-list>
-  </section> -->
   <section class="mx-auto max-w-screen-xl py-8 px-4">
     <router-outlet></router-outlet>
   </section>

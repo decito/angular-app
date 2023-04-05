@@ -3,51 +3,55 @@
     class="mx-auto flex max-w-[1440px] items-center justify-between py-4 px-5"
   >
     <div class="flex items-center gap-10">
-      <h1 class="text-2xl font-semibold"><a href="#">Recipe Book</a></h1>
+      <h1 class="text-2xl font-semibold">
+        <a routerLink="/">Recipe Book</a>
+      </h1>
 
       <ul class="flex gap-3">
         <li>
           <a
-            (click)="changeRoute('recipes')"
-            href="#"
-            class="transition-all hover:font-bold"
-            [ngClass]="{ 'font-bold underline': isRecipeCurRoute() }"
-            >Recipes</a
+            routerLink="/recipes"
+            class="router-link"
+            routerLinkActive="router-link-active"
           >
+            Recipes
+          </a>
         </li>
 
         <li>
           <a
-            (click)="changeRoute('shopping')"
-            href="#"
-            class="transition-all hover:font-bold"
-            [ngClass]="{ 'font-bold underline': isShoppingCurRoute() }"
-            >Shopping</a
+            routerLink="/shopping"
+            class="router-link"
+            routerLinkActive="router-link-active"
           >
+            Shopping
+          </a>
         </li>
       </ul>
     </div>
 
     <ul>
       <li toggleController class="relative">
-        <a appDropdown href="#" class="hidden lg:block">
+        <a appDropdown class="hidden lg:block">
           Menu
+
           <i class="fa-solid fa-caret-down"></i>
         </a>
 
-        <a appDropdown href="#" class="lg:hidden">
+        <a appDropdown class="lg:hidden">
           <i class="fa-solid fa-bars"></i>
         </a>
 
-        <ul
-          class="absolute left-[-7rem] top-11 hidden min-w-[8rem] flex-col items-center gap-2 rounded border border-gray-300 bg-white p-4 shadow-lg open:flex lg:left-[-4rem]"
-          toggle
-        >
-          <li><a href="#">Save Data</a></li>
+        <ul class="menu-toggler" toggle>
+          <li>
+            <a>Save Data</a>
+          </li>
 
           <hr class="w-full" />
 
-          <li><a href="#">Fetch Data</a></li>
+          <li>
+            <a>Fetch Data</a>
+          </li>
         </ul>
       </li>
     </ul>

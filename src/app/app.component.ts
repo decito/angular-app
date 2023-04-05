@@ -6,10 +6,4 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'angular-app'
-
-  curDisRoute = 'recipes'
-
-  displayRoute(r: string) {
-    this.curDisRoute = r
-  }
 }
