@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { ErrorPageComponent } from '~/components/error-page/error-page.component'
 import { RecipeDetailComponent } from '~/components/recipes/recipe-detail/recipe-detail.component'
+import { RecipeEditComponent } from '~/components/recipes/recipe-edit/recipe-edit.component'
 import { RecipesComponent } from '~/components/recipes/recipes.component'
 import { ShoppingListComponent } from '~/components/shopping-list/shopping-list.component'
 
@@ -12,8 +13,9 @@ const appRoutes: Routes = [
     path: 'recipes',
     component: RecipesComponent,
     children: [
-      { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-      { path: ':id', component: RecipeDetailComponent }
+      { path: 'new', component: RecipeEditComponent },
+      { path: ':id', component: RecipeDetailComponent },
+      { path: ':id/edit', component: RecipeEditComponent }
     ]
   },
   { path: 'shopping', component: ShoppingListComponent },
