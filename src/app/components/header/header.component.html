@@ -1,17 +1,17 @@
-<section class="border-b border-b-gray-300 bg-gray-200">
+<section class="bg-gray-200">
   <nav
     class="mx-auto flex max-w-[1440px] items-center justify-between py-4 px-5"
   >
     <div class="flex items-center gap-10">
-      <h1 class="text-2xl font-semibold">
-        <a routerLink="/">Recipe Book</a>
+      <h1 class="header-text text-2xl font-semibold">
+        <a routerLink="/" class="header-text">Recipe Book</a>
       </h1>
 
       <ul class="flex gap-3">
         <li>
           <a
             routerLink="/recipes"
-            class="router-link"
+            class="router-link header-text"
             routerLinkActive="router-link-active"
           >
             Recipes
@@ -21,7 +21,7 @@
         <li>
           <a
             routerLink="/shopping"
-            class="router-link"
+            class="router-link header-text"
             routerLinkActive="router-link-active"
           >
             Shopping
@@ -32,25 +32,25 @@
 
     <ul>
       <li toggleController class="relative">
-        <a appDropdown class="hidden lg:block">
+        <a appDropdown class="header-text hidden lg:block">
           Menu
 
-          <i class="fa-solid fa-caret-down"></i>
+          <i class="fa-solid fa-caret-down header-text"></i>
         </a>
 
         <a appDropdown class="lg:hidden">
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars header-text"></i>
         </a>
 
         <ul class="menu-toggler" toggle>
           <li>
-            <a>Save Data</a>
+            <a class="header-text">Save Data</a>
           </li>
 
-          <hr class="w-full" />
+          <hr class="invisible w-full" />
 
           <li>
-            <a>Fetch Data</a>
+            <a class="header-text">Fetch Data</a>
           </li>
         </ul>
       </li>
