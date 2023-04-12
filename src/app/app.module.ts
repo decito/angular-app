@@ -11,6 +11,7 @@ import { DropdownDirective } from '~/shared/dropdown.directive'
 import { HtmlCommentDirective } from '~/shared/html-comment.directive'
 import { UnlessDirective } from '~/shared/unless.directive'
 
+import { ButtonComponent } from './components/button/button.component'
 import { ErrorPageComponent } from '~/components/error-page/error-page.component'
 import { HeaderComponent } from '~/components/header/header.component'
 import { RecipeDetailComponent } from '~/components/recipes/recipe-detail/recipe-detail.component'
@@ -24,6 +25,7 @@ import { ShoppingListEditComponent } from '~/components/shopping-list/shopping-l
 @NgModule({
   declarations: [
     AppComponent,
+    ButtonComponent,
     BasicHighlightDirective,
     DropdownDirective,
     ErrorPageComponent,
