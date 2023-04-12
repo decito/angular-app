@@ -4,9 +4,9 @@
   <div class="w-7/12">
     <p
       *ngIf="!selectedRecipe"
-      [appBasicHighlight]="'rgb(253, 224, 71)'"
-      [defaultColor]="'rgb(229, 231, 235)'"
-      class="cursor-default rounded p-2"
+      appBasicHighlight
+      highlightColor="success"
+      class="card-item hover:cursor-crosshair"
     >
       Select a recipe or hover me
     </p>

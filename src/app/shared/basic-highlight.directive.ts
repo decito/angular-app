@@ -8,12 +8,16 @@ import {
   Input
 } from '@angular/core'
 
+import { Colors, backgroundColors } from '~/types/colors'
+
 @Directive({
   selector: '[appBasicHighlight]'
 })
 export class BasicHighlightDirective implements OnInit {
-  @Input() defaultColor = 'transparent'
-  @Input('appBasicHighlight') highlightColor = 'rgb(22, 163, 74)'
+  @Input() defaultColor: Colors = 'transparent'
+  @Input() highlightColor: Colors = 'warning'
+
+  // @Input('appBasicHighlight') highlightColor = 'rgb(22, 163, 74)'
 
   /* A propriedade acima está com o mesmo nome do selector da diretiva.
    * Portanto, ao inves de usar no HTML como sendo, ex:
@@ -43,24 +47,24 @@ export class BasicHighlightDirective implements OnInit {
      * this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'green')
      */
 
-    this.backgroundColor = this.defaultColor
+    this.backgroundColor = backgroundColors[this.defaultColor]
   }
 
-  @HostListener('mouseenter') mouseover(eventData: Event) {
+  @HostListener('mouseenter') mouseover() {
     /*  No need to use anymore since HostBinding already target the style.backgroundColor:
      *
      * this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'green')
      */
 
-    this.backgroundColor = this.highlightColor
+    this.backgroundColor = backgroundColors[this.highlightColor]
   }
 
-  @HostListener('mouseleave') mouseleave(eventData: Event) {
+  @HostListener('mouseleave') mouseleave() {
     /*  No need to use anymore since HostBinding already target the style.backgroundColor:
      *
      * this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'transparent')
      */
 
-    this.backgroundColor = this.defaultColor
+    this.backgroundColor = backgroundColors[this.defaultColor]
   }
 }
