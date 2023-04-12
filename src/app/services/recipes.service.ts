@@ -29,6 +29,8 @@ export class RecipesService {
 
   constructor(private shoppingService: ShoppingService) {}
 
+  recipeSelected = new EventEmitter<Recipe>()
+
   getRecipes() {
     return this.recipes.slice()
   }
@@ -44,6 +46,4 @@ export class RecipesService {
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     ingredients.forEach(i => this.shoppingService.addIngredient(i))
   }
-
-  recipeSelected = new EventEmitter<Recipe>()
 }
