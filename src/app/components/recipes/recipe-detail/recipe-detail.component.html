@@ -1,30 +1,33 @@
-<section class="flex flex-col gap-4">
+<section class="card-item flex flex-col gap-4">
   <div
     class="h-64 w-64 rounded-xl bg-cover bg-center"
     [ngStyle]="{ backgroundImage: 'url(' + recipe.imgPath + ')' }"
   ></div>
 
-  <h3 class="text-lg font-medium">{{ recipe.name }}</h3>
+  <h3>{{ recipe.name }}</h3>
 
   <p>{{ recipe.description }}</p>
 
-  <ul class="w-2/3 rounded border border-gray-300 bg-gray-200">
+  <hr />
+
+  <h4>Ingredients</h4>
+
+  <ul class="card-item w-2/3">
     <li *ngFor="let ingredient of recipe.ingredients">
       {{ ingredient.amount }} {{ ingredient.name }}
     </li>
   </ul>
 
   <footer toggleController>
-    <button class="w-fit rounded bg-blue-500 px-3 py-2 text-white" appDropdown>
-      Manage Recipe
+    <app-button
+      size="lg"
+      text="Manage Recipe"
+      type="primary"
+      icon="caret-down"
+      appDropdown
+    ></app-button>
 
-      <i class="fa-solid fa-caret-down"></i>
-    </button>
-
-    <ul
-      class="mt-0.5 hidden w-fit flex-col gap-2 rounded border border-blue-700 bg-blue-500 p-2 text-white shadow-lg open:flex"
-      toggle
-    >
+    <ul class="menuToggler" toggle>
       <li>
         <a (click)="addToList()">Add Ingredients to Shopping List</a>
       </li>

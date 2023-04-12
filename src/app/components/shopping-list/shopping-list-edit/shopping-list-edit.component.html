@@ -3,49 +3,32 @@
     <div class="flex w-4/12 flex-col">
       <label for="name">Name</label>
 
-      <input
-        type="text"
-        name="name"
-        id="name"
-        class="rounded border border-gray-300 p-1"
-        #nameInput
-      />
+      <input type="text" name="name" id="name" #nameInput />
     </div>
 
     <div class="flex w-1/12 flex-col">
       <label for="amount">Amount</label>
 
-      <input
-        type="number"
-        name="amount"
-        id="amount"
-        class="rounded border border-gray-300 p-1"
-        #amountInput
-      />
+      <input type="number" name="amount" id="amount" #amountInput />
     </div>
   </section>
 
   <footer class="flex gap-4">
-    <button
-      type="submit"
-      class="w-20 rounded bg-green-600 px-2 py-1.5 text-white"
+    <app-button
+      size="lg"
+      text="Add"
+      type="success"
+      function="submit"
       (click)="onAddItem()"
-    >
-      Add
-    </button>
+    ></app-button>
 
-    <button
-      type="button"
-      class="w-20 rounded bg-red-700 px-2 py-1.5 text-white"
-    >
-      Remove
-    </button>
+    <app-button size="lg" text="Remove" type="danger"></app-button>
 
-    <button
-      type="reset"
-      class="w-20 rounded bg-blue-500 px-2 py-1.5 text-white"
-    >
-      Clear
-    </button>
+    <app-button
+      size="lg"
+      text="Reset"
+      type="primary"
+      function="reset"
+    ></app-button>
   </footer>
 </form>
