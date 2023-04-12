@@ -1,5 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core'
 
+import { Colors } from '~/types/colors'
+
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html'
@@ -7,13 +9,7 @@ import { Component, Input, OnChanges } from '@angular/core'
 export class ButtonComponent implements OnChanges {
   @Input() text: string
 
-  @Input() type:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning'
-    | 'danger'
-    | 'disabled' = 'primary'
+  @Input() type: Colors = 'primary'
 
   @Input() size?: 'sm' | 'lg' | 'full' | 'default' = 'default'
   @Input() outline? = false
