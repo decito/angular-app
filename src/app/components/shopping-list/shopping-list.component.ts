@@ -13,7 +13,7 @@ export class ShoppingListComponent implements OnInit {
 
   constructor(private shoppingService: ShoppingService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.ingredients = this.shoppingService.getIngredients()
 
     this.shoppingService.ingredientChanged.subscribe(

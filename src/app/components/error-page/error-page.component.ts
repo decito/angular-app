@@ -10,7 +10,7 @@ export class ErrorPageComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.data.subscribe((d: Data) => (this.errorMessage = d['message']))
   }
 }

@@ -28,7 +28,7 @@ export class ButtonComponent implements OnChanges {
     return this.disabled ? 'disabled' : 'enabled'
   }
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     const classStyles = {
       outlined: {
         disabled: `border-disabled text-disabled`,

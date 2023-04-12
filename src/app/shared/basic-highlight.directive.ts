@@ -36,7 +36,7 @@ export class BasicHighlightDirective implements OnInit {
     private renderer: Renderer2
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     /*  BAD PRACTICE:
      *
      * this.elRef.nativeElement.style.backgroundColor = green
