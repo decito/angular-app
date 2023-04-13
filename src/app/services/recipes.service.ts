@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable } from '@angular/core'
+import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs/internal/Subject'
 
 import { Recipe } from '~/models/recipe/recipe.model'
 
@@ -27,9 +28,9 @@ export class RecipesService {
     )
   ]
 
-  constructor(private shoppingService: ShoppingService) {}
+  recipeSelected = new Subject<Recipe>()
 
-  recipeSelected = new EventEmitter<Recipe>()
+  constructor(private shoppingService: ShoppingService) {}
 
   getRecipes() {
     return this.recipes.slice()
@@ -38,7 +39,7 @@ export class RecipesService {
   getRecipe(i: number) {
     const item = this.recipes.slice()[i]
 
-    this.recipeSelected.emit(item)
+    this.recipeSelected.next(item)
 
     return item
   }
