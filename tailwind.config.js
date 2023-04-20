@@ -1,53 +1,63 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './components/**/*.{html,js}',
-    './pages/**/*.{html,js}',
-    './index.html',
-    './public/index.html',
-    './src/**/*.{html,js}'
-  ],
+  content: ['./src/**/*.{html,js}', './index.html'],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: 'rgb(59 130 246)',
-        secondary: 'rgb(209 213 219)',
-        success: 'rgb(34 197 94)',
-        warning: 'rgb(234 179 8)',
-        danger: 'rgb(239 68 68)',
-        disabled: 'rgb(107 114 128)'
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+        success: 'rgb(var(--color-success) / <alpha-value>)',
+        warning: 'rgb(var(--color-warning) / <alpha-value>)',
+        danger: 'rgb(var(--color-danger) / <alpha-value>)',
+        disabled: 'rgb(var(--color-disabled) / <alpha-value>)'
       }
     }
   },
+
+  /*  Safelist for button component */
   safelist: [
+    /* Spacing */
     'p-1',
     'p-2',
     'p-3',
+
+    /* Primary */
     'bg-primary',
     'hover:bg-primary',
     'border-primary',
     'text-primary',
+
+    /* Secondary */
     'bg-secondary',
     'hover:bg-secondary',
     'border-secondary',
     'text-secondary',
+
+    /* Success */
     'bg-success',
     'hover:bg-success',
     'border-success',
     'text-success',
+
+    /* Warning */
     'bg-warning',
     'hover:bg-warning',
     'border-warning',
     'text-warning',
+
+    /* Danger */
     'bg-danger',
     'hover:bg-danger',
     'border-danger',
     'text-danger',
+
+    /* Disabled */
     'bg-disabled',
     'border-disabled',
     'text-disabled',
-    'hover:brightness-110',
+
+    /* Hover effect for outline button */
     'hover:text-white'
   ]
 }
