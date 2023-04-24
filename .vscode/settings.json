@@ -1,4 +1,5 @@
 {
+  "html.format.wrapAttributes": "force-expand-multiline",
   "search.exclude": {
     ".vscode": true,
     "*.editorconfig": true,
