@@ -7,8 +7,6 @@ import { Colors } from '~/types/colors'
   templateUrl: './button.component.html'
 })
 export class ButtonComponent implements OnChanges {
-  @Input() text: string
-
   @Input() type: Colors = 'primary'
 
   @Input() size?: 'sm' | 'lg' | 'full' | 'default' = 'default'

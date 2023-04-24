@@ -3,32 +3,49 @@
     <div class="flex w-4/12 flex-col">
       <label for="name">Name</label>
 
-      <input type="text" name="name" id="name" #nameInput />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        #nameInput
+      />
     </div>
 
     <div class="flex w-1/12 flex-col">
       <label for="amount">Amount</label>
 
-      <input type="number" name="amount" id="amount" #amountInput />
+      <input
+        type="number"
+        name="amount"
+        id="amount"
+        #amountInput
+      />
     </div>
   </section>
 
   <footer class="flex gap-4">
     <app-button
       size="lg"
-      text="Add"
       type="success"
       function="submit"
       (click)="onAddItem()"
-    ></app-button>
-
-    <app-button size="lg" text="Remove" type="danger"></app-button>
+    >
+      Add
+    </app-button>
 
     <app-button
       size="lg"
-      text="Reset"
+      type="danger"
+    >
+      Remove
+    </app-button>
+
+    <app-button
+      size="lg"
       type="primary"
       function="reset"
-    ></app-button>
+    >
+      Reset
+    </app-button>
   </footer>
 </form>

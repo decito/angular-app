@@ -2,9 +2,10 @@
   <app-button
     routerLink="new"
     size="lg"
-    text="New Recipe"
     type="success"
-  ></app-button>
+  >
+    New Recipe
+  </app-button>
 
   <app-recipe-item
     *ngFor="let recipe of recipes; let i = index"

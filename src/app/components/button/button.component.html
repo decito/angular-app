@@ -1,5 +1,12 @@
-<button [type]="function" [class]="classes" [disabled]="disabled">
-  {{ text }}
+<button
+  [type]="function"
+  [class]="classes"
+  [disabled]="disabled"
+>
+  <ng-content></ng-content>
 
-  <i *ngIf="icon" [class]="'fas fa-' + icon"></i>
+  <i
+    *ngIf="icon"
+    [class]="'fas fa-' + icon"
+  ></i>
 </button>

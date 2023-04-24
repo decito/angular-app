@@ -4,7 +4,10 @@
   <hr class="my-4" />
 
   <ul class="flex flex-col gap-2">
-    <a class="card-item-hover px-5 py-4" *ngFor="let ingredient of ingredients">
+    <a
+      class="card-item-hover px-5 py-4"
+      *ngFor="let ingredient of ingredients"
+    >
       {{ ingredient.name }} ({{ ingredient.amount }})
     </a>
   </ul>

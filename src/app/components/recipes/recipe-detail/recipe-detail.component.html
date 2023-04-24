@@ -21,13 +21,17 @@
   <footer toggleController>
     <app-button
       size="lg"
-      text="Manage Recipe"
       type="primary"
       icon="caret-down"
       appDropdown
-    ></app-button>
+    >
+      Manage Recipe
+    </app-button>
 
-    <ul class="menuToggler" toggle>
+    <ul
+      class="menuToggler"
+      toggle
+    >
       <li>
         <a (click)="addToList()">Add Ingredients to Shopping List</a>
       </li>
