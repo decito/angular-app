@@ -1,50 +1,35 @@
-<form class="flex flex-col gap-4">
+<form
+  class="flex flex-col gap-4"
+  [formGroup]="ingredientForm"
+  (ngSubmit)="onAddItem()"
+>
   <section class="flex gap-2">
     <div class="flex w-4/12 flex-col">
       <label for="name">Name</label>
 
-      <input
-        type="text"
-        name="name"
-        id="name"
-        #nameInput
-      />
+      <input type="text" name="name" formControlName="name" />
     </div>
 
     <div class="flex w-1/12 flex-col">
       <label for="amount">Amount</label>
 
-      <input
-        type="number"
-        name="amount"
-        id="amount"
-        #amountInput
-      />
+      <input type="number" name="amount" formControlName="amount" />
     </div>
   </section>
 
   <footer class="flex gap-4">
     <app-button
       size="lg"
-      type="success"
-      function="submit"
-      (click)="onAddItem()"
+      variant="success"
+      type="submit"
+      [disabled]="ingredientForm.invalid"
     >
       Add
     </app-button>
 
-    <app-button
-      size="lg"
-      type="danger"
-    >
-      Remove
-    </app-button>
+    <app-button size="lg" variant="danger">Remove</app-button>
 
-    <app-button
-      size="lg"
-      type="primary"
-      function="reset"
-    >
+    <app-button size="lg" variant="primary" function="reset">
       Reset
     </app-button>
   </footer>
