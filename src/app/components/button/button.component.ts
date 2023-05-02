@@ -7,14 +7,14 @@ import { Colors } from '~/types/colors'
   templateUrl: './button.component.html'
 })
 export class ButtonComponent implements OnChanges {
-  @Input() type: Colors = 'primary'
+  @Input() variant: Colors = 'primary'
 
   @Input() size?: 'sm' | 'lg' | 'full' | 'default' = 'default'
   @Input() outline? = false
   @Input() disabled? = false
 
   @Input() icon = ''
-  @Input() function: 'button' | 'submit' | 'reset' = 'button'
+  @Input() type: 'button' | 'submit' | 'reset' = 'button'
 
   classes: string
 
@@ -30,11 +30,11 @@ export class ButtonComponent implements OnChanges {
     const classStyles = {
       outlined: {
         disabled: `border-disabled text-disabled`,
-        enabled: `border-${this.type} text-${this.type} hover:bg-${this.type} hover:text-white`
+        enabled: `border-${this.variant} text-${this.variant} hover:bg-${this.variant} hover:text-white`
       },
       solid: {
         disabled: `border-disabled bg-disabled`,
-        enabled: `border-${this.type} bg-${this.type} hover:brightness-110`
+        enabled: `border-${this.variant} bg-${this.variant} hover:brightness-110`
       }
     }
 
