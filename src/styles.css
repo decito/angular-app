@@ -25,7 +25,71 @@
   }
 
   button {
-    @apply flex items-center justify-between gap-2 rounded border-2 font-semibold transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply rounded border-2 p-2 font-semibold transition-all hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:brightness-100;
+  }
+
+  button.primary:not(.outlined) {
+    @apply border-primary bg-primary;
+  }
+
+  button.secondary:not(.outlined) {
+    @apply border-secondary bg-secondary;
+  }
+
+  button.success:not(.outlined) {
+    @apply border-success bg-success;
+  }
+
+  button.warning:not(.outlined) {
+    @apply border-warning bg-warning;
+  }
+
+  button.danger:not(.outlined) {
+    @apply border-danger bg-danger;
+  }
+
+  button.disabled:not(.outlined) {
+    @apply border-disabled bg-disabled;
+  }
+
+  button.primary.outlined {
+    @apply border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  button.secondary.outlined {
+    @apply border-secondary text-secondary hover:bg-secondary hover:text-white;
+  }
+
+  button.success.outlined {
+    @apply border-success text-success hover:bg-success hover:text-white;
+  }
+
+  button.warning.outlined {
+    @apply border-warning text-warning hover:bg-warning hover:text-white;
+  }
+
+  button.danger.outlined {
+    @apply border-danger text-danger hover:bg-danger hover:text-white;
+  }
+
+  button.disabled.outlined {
+    @apply border-disabled text-disabled;
+  }
+
+  button.sm {
+    @apply p-1;
+  }
+
+  button.full {
+    @apply w-full p-2;
+  }
+
+  button.lg {
+    @apply p-3;
+  }
+
+  button i {
+    @apply ml-2;
   }
 
   h1 {
@@ -74,10 +138,6 @@
 
   ul.menuToggler {
     @apply mt-0.5 hidden w-fit flex-col gap-2 rounded border border-blue-700 bg-primary p-2 shadow-lg open:flex;
-  }
-
-  .f-col {
-    @apply flex flex-col;
   }
 
   .card-item {
