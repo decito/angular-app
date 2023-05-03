@@ -20,16 +20,16 @@
   <footer class="flex gap-4">
     <app-button
       size="lg"
-      variant="success"
+      [variant]="editMode ? 'warning' : 'success'"
       type="submit"
       [disabled]="ingredientForm.invalid"
     >
-      Add
+      {{ editMode ? 'Edit' : 'Add' }}
     </app-button>
 
     <app-button size="lg" variant="danger">Remove</app-button>
 
-    <app-button size="lg" variant="primary" function="reset">
+    <app-button size="lg" variant="primary" type="reset" (click)="onReset()">
       Reset
     </app-button>
   </footer>

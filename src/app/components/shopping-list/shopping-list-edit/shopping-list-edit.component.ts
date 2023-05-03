@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Subscription } from 'rxjs/internal/Subscription'
 
 import { ShoppingService } from '~/services/shopping.service'
 
 import { Ingredient } from '~/models/shopping-list/ingredient.model'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -11,6 +12,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ShoppingListEditComponent implements OnInit {
   ingredientForm: FormGroup
+  subscription: Subscription
+  editedItemIndex: number
+  editMode = false
 
   constructor(private shoppingService: ShoppingService) {}
 
@@ -19,6 +23,19 @@ export class ShoppingListEditComponent implements OnInit {
       name: new FormControl(null, Validators.required),
       amount: new FormControl(null, [Validators.required, Validators.min(1)])
     })
+
+    this.subscription = this.shoppingService.editItem.subscribe(
+      (id: number) => {
+        this.editMode = true
+        this.editedItemIndex = id
+        const ingredient = this.shoppingService.getIngredient(id)
+
+        this.ingredientForm.setValue({
+          name: ingredient.name,
+          amount: ingredient.amount
+        })
+      }
+    )
   }
 
   onAddItem() {
@@ -26,6 +43,18 @@ export class ShoppingListEditComponent implements OnInit {
     const ingAmount = this.ingredientForm.value['amount']
     const newIngredient = new Ingredient(ingName, ingAmount)
 
-    this.shoppingService.addIngredient(newIngredient)
+    if (this.editMode) {
+      this.shoppingService.updateIngredient(this.editedItemIndex, newIngredient)
+
+      this.editMode = false
+    } else {
+      this.shoppingService.addIngredient(newIngredient)
+    }
+
+    this.ingredientForm.reset()
+  }
+
+  onReset() {
+    this.editMode = false
   }
 }

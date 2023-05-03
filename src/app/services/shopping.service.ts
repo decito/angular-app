@@ -12,6 +12,11 @@ export class ShoppingService {
   ]
 
   ingredientChanged = new Subject<Ingredient[]>()
+  editItem = new Subject<number>()
+
+  getIngredient(id: number) {
+    return this.ingredients[id]
+  }
 
   getIngredients() {
     return this.ingredients.slice()
@@ -19,6 +24,12 @@ export class ShoppingService {
 
   addIngredient(i: Ingredient) {
     this.ingredients.push(i)
+
+    this.ingredientChanged.next(this.getIngredients())
+  }
+
+  updateIngredient(id: number, newValues: Ingredient) {
+    this.ingredients[id] = newValues
 
     this.ingredientChanged.next(this.getIngredients())
   }
