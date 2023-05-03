@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 
 import { Colors } from '~/types/colors'
 
@@ -6,46 +6,23 @@ import { Colors } from '~/types/colors'
   selector: 'app-button',
   templateUrl: './button.component.html'
 })
-export class ButtonComponent implements OnChanges {
-  @Input() variant: Colors = 'primary'
-
+export class ButtonComponent implements OnInit {
+  @Input() variant?: Colors = 'primary'
   @Input() size?: 'sm' | 'lg' | 'full' | 'default' = 'default'
-  @Input() outline? = false
+  @Input() type?: 'button' | 'submit' | 'reset' = 'button'
+
+  @Input() outlined? = false
   @Input() disabled? = false
 
-  @Input() icon = ''
-  @Input() type: 'button' | 'submit' | 'reset' = 'button'
+  @Input() icon? = ''
 
   classes: string
 
-  outlineToString = () => {
-    return this.outline ? 'outlined' : 'solid'
-  }
+  ngOnInit(): void {
+    this.classes = `${this.size} ${this.variant}`
 
-  disabledToString = () => {
-    return this.disabled ? 'disabled' : 'enabled'
-  }
+    if (this.outlined) this.classes += ` outlined`
 
-  ngOnChanges(): void {
-    const classStyles = {
-      outlined: {
-        disabled: `border-disabled text-disabled`,
-        enabled: `border-${this.variant} text-${this.variant} hover:bg-${this.variant} hover:text-white`
-      },
-      solid: {
-        disabled: `border-disabled bg-disabled`,
-        enabled: `border-${this.variant} bg-${this.variant} hover:brightness-110`
-      }
-    }
-
-    const sizeStyle: Record<typeof this.size, string> = {
-      sm: 'p-1',
-      lg: 'p-3',
-      full: 'p-2 w-full',
-      default: 'p-2'
-    }
-
-    this.classes = classStyles[this.outlineToString()][this.disabledToString()]
-    this.classes += ` ${sizeStyle[this.size]}`
+    if (this.disabled) this.classes += ` disabled`
   }
 }
