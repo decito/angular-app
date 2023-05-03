@@ -6,7 +6,8 @@
   <ul class="flex flex-col gap-2">
     <a
       class="card-item-hover px-5 py-4"
-      *ngFor="let ingredient of ingredients"
+      *ngFor="let ingredient of ingredients; let i = index"
+      (click)="onEditIngredient(i)"
     >
       {{ ingredient.name }} ({{ ingredient.amount }})
     </a>
