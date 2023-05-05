@@ -16,7 +16,8 @@
 @layer components {
   a,
   body,
-  input {
+  input,
+  textarea {
     @apply text-white;
   }
 
@@ -112,7 +113,8 @@
     @apply border-gray-500;
   }
 
-  input {
+  input,
+  textarea {
     @apply rounded border border-gray-600 bg-gray-700 p-2;
   }
 
@@ -151,4 +153,9 @@
   .menu-toggler {
     @apply absolute left-[-7rem] top-11 hidden min-w-[8rem] flex-col items-center gap-2 rounded border border-gray-300 bg-gray-200 p-4 shadow-lg open:flex lg:left-[-4rem];
   }
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  @apply border-red-600;
 }
