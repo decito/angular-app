@@ -12,13 +12,13 @@ export class RecipesService {
     new Recipe(
       'Tasty Schinitzel',
       'A super-tasty Schinitzel - just awesome!',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Israeli_schnitzel_and_pasta.jpg/1280px-Israeli_schnitzel_and_pasta.jpg',
+      'assets/images/schinitzel.jpg',
       [new Ingredient('Meat', 1), new Ingredient('Fried Potatos', 20)]
     ),
     new Recipe(
       'Special Touched Burger',
       'Havenly sent burger. Addiction warning!',
-      'http://www.alittletipsy.com/wp-content/uploads/2014/05/The-Best-Hambuger-Recipe-Mozzarella-Burgers-square.jpg',
+      'assets/images/burger.jpg',
       [
         new Ingredient('Meat', 1),
         new Ingredient('Tomatoes', 2),
