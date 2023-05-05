@@ -38,7 +38,7 @@ export class ShoppingListEditComponent implements OnInit {
     )
   }
 
-  onAddItem() {
+  onSubmit() {
     const ingName = this.ingredientForm.value['name']
     const ingAmount = this.ingredientForm.value['amount']
     const newIngredient = new Ingredient(ingName, ingAmount)
