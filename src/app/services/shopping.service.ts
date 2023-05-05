@@ -33,4 +33,10 @@ export class ShoppingService {
 
     this.ingredientChanged.next(this.getIngredients())
   }
+
+  deleteIngredient(id: number) {
+    this.ingredients.splice(id, 1)
+
+    this.ingredientChanged.next(this.getIngredients())
+  }
 }

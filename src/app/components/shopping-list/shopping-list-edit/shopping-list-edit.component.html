@@ -27,7 +27,14 @@
       {{ editMode ? 'Edit' : 'Add' }}
     </app-button>
 
-    <app-button size="lg" variant="danger">Remove</app-button>
+    <app-button
+      size="lg"
+      variant="danger"
+      (click)="onDelete()"
+      *ngIf="editMode"
+    >
+      Remove
+    </app-button>
 
     <app-button size="lg" variant="primary" type="reset" (click)="onReset()">
       Reset
