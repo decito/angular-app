@@ -6,6 +6,7 @@ import {
   OnInit
 } from '@angular/core'
 import { Subscription } from 'rxjs/internal/Subscription'
+import { Router } from '@angular/router'
 
 import { RecipesService } from '~/services/recipes.service'
 
@@ -19,12 +20,14 @@ export class RecipesComponent
   implements OnInit, AfterContentChecked, OnDestroy
 {
   recipeSelected = false
+  hideTemplate = false
 
   subscription: Subscription
 
   constructor(
     private RecipesService: RecipesService,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +39,10 @@ export class RecipesComponent
   }
 
   ngAfterContentChecked(): void {
+    if (this.router.url.indexOf('/new') > -1) {
+      this.hideTemplate = true
+    }
+
     this.cdRef.detectChanges()
   }
 

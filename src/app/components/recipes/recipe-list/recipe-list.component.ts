@@ -16,4 +16,8 @@ export class RecipeListComponent implements OnInit {
   ngOnInit(): void {
     this.recipes = this.RecipesService.getRecipes()
   }
+
+  onHideTemplate() {
+    this.RecipesService.hideTemplate.next(true)
+  }
 }

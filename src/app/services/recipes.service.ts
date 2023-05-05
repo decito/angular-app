@@ -29,6 +29,7 @@ export class RecipesService {
   ]
 
   selectedRecipe = new Subject<Recipe>()
+  hideTemplate = new Subject<boolean>()
 
   constructor(private shoppingService: ShoppingService) {}
 
