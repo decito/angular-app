@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input, OnChanges, OnInit } from '@angular/core'
 
 import { Colors } from '~/types/colors'
 
@@ -6,7 +6,7 @@ import { Colors } from '~/types/colors'
   selector: 'app-button',
   templateUrl: './button.component.html'
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent implements OnInit, OnChanges {
   @Input() variant?: Colors = 'primary'
   @Input() size?: 'sm' | 'lg' | 'full' | 'default' = 'default'
   @Input() type?: 'button' | 'submit' | 'reset' = 'button'
@@ -24,5 +24,9 @@ export class ButtonComponent implements OnInit {
     if (this.outlined) this.classes += ` outlined`
 
     if (this.disabled) this.classes += ` disabled`
+  }
+
+  ngOnChanges(): void {
+    this.ngOnInit()
   }
 }
