@@ -28,7 +28,7 @@ export class RecipesService {
     )
   ]
 
-  recipeSelected = new Subject<Recipe>()
+  selectedRecipe = new Subject<Recipe>()
 
   constructor(private shoppingService: ShoppingService) {}
 
@@ -39,7 +39,7 @@ export class RecipesService {
   getRecipe(i: number) {
     const item = this.recipes.slice()[i]
 
-    this.recipeSelected.next(item)
+    this.selectedRecipe.next(item)
 
     return item
   }

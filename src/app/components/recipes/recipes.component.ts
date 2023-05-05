@@ -18,7 +18,7 @@ import { Recipe } from '~/models/recipe/recipe.model'
 export class RecipesComponent
   implements OnInit, AfterContentChecked, OnDestroy
 {
-  selectedRecipe = false
+  recipeSelected = false
 
   subscription: Subscription
 
@@ -28,9 +28,9 @@ export class RecipesComponent
   ) {}
 
   ngOnInit(): void {
-    this.subscription = this.RecipesService.recipeSelected.subscribe(
+    this.subscription = this.RecipesService.selectedRecipe.subscribe(
       (r: Recipe) => {
-        if (r) this.selectedRecipe = true
+        if (r) this.recipeSelected = true
       }
     )
   }
