@@ -69,7 +69,14 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.recipeForm)
+    const newRecipe = this.recipeForm.value
+
+    if (this.editMode) {
+      this.recipesService.updateRecipe(this.recipeId, newRecipe)
+      return
+    }
+
+    this.recipesService.addRecipe(newRecipe)
   }
 
   onAddIngredient() {

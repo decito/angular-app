@@ -28,6 +28,7 @@ export class RecipesService {
     )
   ]
 
+  recipeUpdated = new Subject<Recipe[]>()
   selectedRecipe = new Subject<Recipe>()
   hideTemplate = new Subject<boolean>()
 
@@ -47,5 +48,17 @@ export class RecipesService {
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     ingredients.forEach(i => this.shoppingService.addIngredient(i))
+  }
+
+  addRecipe(r: Recipe) {
+    this.recipes.push(r)
+
+    this.recipeUpdated.next(this.recipes.slice())
+  }
+
+  updateRecipe(i: number, r: Recipe) {
+    this.recipes[i] = r
+
+    this.recipeUpdated.next(this.recipes.slice())
   }
 }
