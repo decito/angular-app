@@ -53,12 +53,18 @@ export class RecipesService {
   addRecipe(r: Recipe) {
     this.recipes.push(r)
 
-    this.recipeUpdated.next(this.recipes.slice())
+    this.recipeUpdated.next(this.getRecipes())
   }
 
   updateRecipe(i: number, r: Recipe) {
     this.recipes[i] = r
 
-    this.recipeUpdated.next(this.recipes.slice())
+    this.recipeUpdated.next(this.getRecipes())
+  }
+
+  deleteRecipe(i: number) {
+    this.recipes.splice(i, 1)
+
+    this.recipeUpdated.next(this.getRecipes())
   }
 }
