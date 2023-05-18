@@ -1,1 +1,74 @@
-<p>recipe-edit works!</p>
+<form
+  class="flex flex-col gap-4"
+  [formGroup]="recipeForm"
+  (ngSubmit)="onSubmit()"
+>
+  <header class="flex gap-4">
+    <app-button
+      [variant]="editMode ? 'warning' : 'success'"
+      type="submit"
+      [disabled]="recipeForm.invalid"
+    >
+      {{ editMode ? 'Edit' : 'Save' }}
+    </app-button>
+
+    <app-button type="reset" variant="danger">Cancel</app-button>
+  </header>
+
+  <section class="flex flex-col gap-4">
+    <div class="flex flex-col gap-1">
+      <label for="name">Name</label>
+
+      <input type="text" name="name" formControlName="name" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="imgPath">Image URL</label>
+
+      <input type="text" name="imgPath" formControlName="imgPath" />
+    </div>
+
+    <div class="">
+      <img src="#" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="desc">Description</label>
+
+      <textarea
+        type="text"
+        name="desc"
+        rows="6"
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <div formArrayName="ingredients" class="flex flex-col gap-6">
+      <div
+        *ngFor="let ingredient of controls; let i = index"
+        class="flex gap-2"
+        [formGroupName]="i"
+      >
+        <div class="flex grow flex-col gap-1">
+          <input
+            type="text"
+            [placeholder]="'Ingredient #' + (i + 1)"
+            formControlName="name"
+          />
+        </div>
+
+        <div class="flex w-1/6 flex-col gap-1">
+          <input type="number" placeholder="amount" formControlName="amount" />
+        </div>
+
+        <app-button class="ml-6" variant="danger" [outlined]="true">
+          Remove
+        </app-button>
+      </div>
+    </div>
+
+    <app-button variant="primary" [outlined]="true" (click)="onAddIngredient()">
+      Add Ingredient
+    </app-button>
+  </section>
+</form>
