@@ -27,11 +27,19 @@
     <div class="flex flex-col gap-1">
       <label for="imgPath">Image URL</label>
 
-      <input type="text" name="imgPath" formControlName="imgPath" />
-    </div>
+      <div class="flex gap-4">
+        <img
+          [src]="recipeForm.controls.imgPath.value ?? '#'"
+          class="h-32 w-32"
+        />
 
-    <div class="">
-      <img src="#" />
+        <input
+          type="text"
+          name="imgPath"
+          class="max-h-10 flex-1"
+          formControlName="imgPath"
+        />
+      </div>
     </div>
 
     <div class="flex flex-col gap-1">
