@@ -1,4 +1,4 @@
-import { Ingredient } from '~/models/shopping-list/ingredient.model'
+import type { Ingredient } from '~/models/shopping-list/ingredient.model'
 
 export class Recipe {
   name: string

@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Subscription } from 'rxjs/internal/Subscription'
 
 import { RecipesService } from '~/services/recipes.service'
 
-import { Recipe } from '~/models/recipe/recipe.model'
-import { Subscription } from 'rxjs/internal/Subscription'
+import type { Recipe } from '~/models/recipe/recipe.model'
 
 @Component({
   selector: 'app-recipe-list',
