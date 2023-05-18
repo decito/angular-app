@@ -9,10 +9,12 @@
       type="submit"
       [disabled]="recipeForm.invalid"
     >
-      {{ editMode ? 'Edit' : 'Save' }}
+      {{ editMode ? 'Update' : 'Save' }}
     </app-button>
 
-    <app-button type="reset" variant="danger">Cancel</app-button>
+    <app-button type="reset" variant="danger" (click)="navigateBack()">
+      Cancel
+    </app-button>
   </header>
 
   <section class="flex flex-col gap-4">
