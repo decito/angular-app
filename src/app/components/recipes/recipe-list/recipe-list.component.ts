@@ -11,13 +11,13 @@ import { Recipe } from '~/models/recipe/recipe.model'
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[]
 
-  constructor(private RecipesService: RecipesService) {}
+  constructor(private recipesService: RecipesService) {}
 
   ngOnInit(): void {
-    this.recipes = this.RecipesService.getRecipes()
+    this.recipes = this.recipesService.getRecipes()
   }
 
   onHideTemplate() {
-    this.RecipesService.hideTemplate.next(true)
+    this.recipesService.hideTemplate.next(true)
   }
 }
