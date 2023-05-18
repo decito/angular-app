@@ -47,9 +47,11 @@ export class ShoppingListEditComponent implements OnInit {
       this.shoppingService.updateIngredient(this.editedItemIndex, newIngredient)
 
       this.editMode = false
-    } else {
-      this.shoppingService.addIngredient(newIngredient)
+
+      return
     }
+
+    this.shoppingService.addIngredient(newIngredient)
 
     this.onReset()
   }
