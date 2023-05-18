@@ -71,7 +71,12 @@
           <input type="number" placeholder="amount" formControlName="amount" />
         </div>
 
-        <app-button class="ml-6" variant="danger" [outlined]="true">
+        <app-button
+          class="ml-6"
+          variant="danger"
+          [outlined]="true"
+          (click)="removeIngredient(i)"
+        >
           Remove
         </app-button>
       </div>

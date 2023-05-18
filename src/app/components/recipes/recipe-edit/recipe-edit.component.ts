@@ -94,6 +94,11 @@ export class RecipeEditComponent implements OnInit {
     this.router.navigate(['../'], { relativeTo: this.route })
   }
 
+  removeIngredient(i: number) {
+    // eslint-disable-next-line @typescript-eslint/no-extra-semi
+    ;(<FormArray>this.recipeForm.get('ingredients')).removeAt(i)
+  }
+
   get controls() {
     return (<FormArray>this.recipeForm.get('ingredients')).controls
   }
