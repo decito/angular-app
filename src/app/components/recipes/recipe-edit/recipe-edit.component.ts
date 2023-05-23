@@ -25,11 +25,11 @@ export class RecipeEditComponent implements OnInit {
 
       this.editMode = p['id'] != null
 
-      this.InitForm()
+      this.initForm()
     })
   }
 
-  private InitForm() {
+  private initForm() {
     const recipeFiller = {
       name: '',
       imgPath: '',
