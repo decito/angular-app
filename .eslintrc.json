@@ -39,7 +39,8 @@
       ],
       "plugins": ["tailwindcss"],
       "rules": {
-        "max-len": ["error", { "code": 100 }]
+        "max-len": ["error", { "code": 100 }],
+        "tailwindcss/no-custom-classname": ["warn", { "whitelist": ["fa\\S*"] }]
       }
     }
   ]
