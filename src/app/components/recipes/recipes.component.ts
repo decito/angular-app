@@ -25,13 +25,13 @@ export class RecipesComponent
   subscription: Subscription
 
   constructor(
-    private RecipesService: RecipesService,
+    private recipesService: RecipesService,
     private cdRef: ChangeDetectorRef,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.subscription = this.RecipesService.selectedRecipe.subscribe(
+    this.subscription = this.recipesService.selectedRecipe.subscribe(
       (r: Recipe) => {
         if (r) this.recipeSelected = true
       }

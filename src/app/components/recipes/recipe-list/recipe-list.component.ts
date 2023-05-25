@@ -13,18 +13,18 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   recipes: Recipe[]
   subscription: Subscription
 
-  constructor(private RecipesService: RecipesService) {}
+  constructor(private recipesService: RecipesService) {}
 
   ngOnInit(): void {
-    this.subscription = this.RecipesService.recipeUpdated.subscribe(
+    this.subscription = this.recipesService.recipeUpdated.subscribe(
       (r: Recipe[]) => (this.recipes = r)
     )
 
-    this.recipes = this.RecipesService.getRecipes()
+    this.recipes = this.recipesService.getRecipes()
   }
 
   onHideTemplate() {
-    this.RecipesService.hideTemplate.next(true)
+    this.recipesService.hideTemplate.next(true)
   }
 
   ngOnDestroy(): void {
