@@ -4,7 +4,7 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core'
   selector: '[appUnless]'
 })
 export class UnlessDirective {
-  @Input() set appUnless(condition: any) {
+  @Input() set appUnless(condition: unknown) {
     if (condition) {
       this.vcRef.clear()
       return
@@ -14,7 +14,7 @@ export class UnlessDirective {
   }
 
   constructor(
-    private templateRef: TemplateRef<any>,
+    private templateRef: TemplateRef<unknown>,
     private vcRef: ViewContainerRef
   ) {}
 }
