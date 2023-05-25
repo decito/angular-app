@@ -10,7 +10,7 @@ import { Router } from '@angular/router'
 
 import { RecipesService } from '~/services/recipes.service'
 
-import { Recipe } from '~/models/recipe/recipe.model'
+import type { Recipe } from '~/models/recipe/recipe.model'
 
 @Component({
   selector: 'app-recipes',
