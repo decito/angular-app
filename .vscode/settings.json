@@ -8,8 +8,9 @@
     "**/.git": true,
     "**/bower_components": true,
     "**/node_modules": true,
-    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
     "**/package.json": true,
     "**/tmp": true
-  }
+  },
+  "prettier.prettierPath": "./node_modules/prettier"
 }
