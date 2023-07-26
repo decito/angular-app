@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core'
 
-import type { Colors } from '~/types/colors'
+import type { Colors } from '~/types'
 
 @Component({
   selector: 'app-button',
