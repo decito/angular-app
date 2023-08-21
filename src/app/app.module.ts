@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from '~/routes/app-routing.module'
 
@@ -40,7 +41,12 @@ import { ShoppingListEditComponent } from '~/components/shopping-list/shopping-l
     ShoppingListEditComponent,
     UnlessDirective
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
