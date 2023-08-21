@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
+import { RecipesResolverService } from './guards/recipes-resolver.service'
+
 import { ErrorPageComponent } from '~/components/error-page/error-page.component'
 import { RecipeDetailComponent } from '~/components/recipes/recipe-detail/recipe-detail.component'
 import { RecipeEditComponent } from '~/components/recipes/recipe-edit/recipe-edit.component'
@@ -14,8 +16,16 @@ const appRoutes: Routes = [
     component: RecipesComponent,
     children: [
       { path: 'new', component: RecipeEditComponent },
-      { path: ':id', component: RecipeDetailComponent },
-      { path: ':id/edit', component: RecipeEditComponent }
+      {
+        path: ':id',
+        component: RecipeDetailComponent,
+        resolve: [RecipesResolverService]
+      },
+      {
+        path: ':id/edit',
+        component: RecipeEditComponent,
+        resolve: [RecipesResolverService]
+      }
     ]
   },
   { path: 'shopping', component: ShoppingListComponent },
