@@ -1,0 +1,37 @@
+<form
+  class="mx-auto flex max-w-2xl flex-col gap-4"
+  #authForm="ngForm"
+  (ngSubmit)="onSubmit(authForm)"
+>
+  <label for="email">Email</label>
+  <input type="email" ngModel name="email" required email />
+
+  <label for="password">Password</label>
+  <input type="password" ngModel name="password" required minlength="6" />
+
+  <div class="flex justify-evenly gap-4">
+    <app-button
+      variant="secondary"
+      [outlined]="true"
+      size="lg"
+      (click)="switchMode()"
+    >
+      Switch to {{ isLoginMode ? ' Sign Up' : 'Login' }}
+    </app-button>
+
+    <app-button
+      size="lg"
+      type="submit"
+      [variant]="isLoginMode ? 'primary' : 'warning'"
+      [disabled]="!authForm.valid"
+      icon="spinner fa-spin"
+      [showIcon]="isLoading"
+    >
+      {{ isLoginMode ? 'Login' : 'Sign Up' }}
+    </app-button>
+  </div>
+
+  <div class="py-4 text-center text-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
+</form>

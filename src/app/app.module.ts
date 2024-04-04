@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from '~/routes/app-routing.module'
@@ -12,6 +12,7 @@ import { DropdownDirective } from '~/shared/dropdown.directive'
 import { HtmlCommentDirective } from '~/shared/html-comment.directive'
 import { UnlessDirective } from '~/shared/unless.directive'
 
+import { AuthComponent } from './components/auth/auth.component'
 import { ButtonComponent } from './components/button/button.component'
 import { ErrorPageComponent } from '~/components/error-page/error-page.component'
 import { HeaderComponent } from '~/components/header/header.component'
@@ -26,6 +27,7 @@ import { ShoppingListEditComponent } from '~/components/shopping-list/shopping-l
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
     ButtonComponent,
     BasicHighlightDirective,
     DropdownDirective,
@@ -44,6 +46,7 @@ import { ShoppingListEditComponent } from '~/components/shopping-list/shopping-l
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

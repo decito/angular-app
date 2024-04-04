@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { RecipesResolverService } from './guards/recipes-resolver.service'
 
+import { AuthComponent } from '~/components/auth/auth.component'
 import { ErrorPageComponent } from '~/components/error-page/error-page.component'
 import { RecipeDetailComponent } from '~/components/recipes/recipe-detail/recipe-detail.component'
 import { RecipeEditComponent } from '~/components/recipes/recipe-edit/recipe-edit.component'
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'shopping', component: ShoppingListComponent },
+  { path: 'auth', component: AuthComponent },
   {
     path: 'not-found',
     component: ErrorPageComponent,

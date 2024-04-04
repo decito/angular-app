@@ -15,6 +15,7 @@ export class ButtonComponent implements OnInit, OnChanges {
   @Input() disabled? = false
 
   @Input() icon? = ''
+  @Input() showIcon? = true
 
   classes: string
 
