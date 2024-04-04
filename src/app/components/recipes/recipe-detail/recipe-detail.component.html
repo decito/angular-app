@@ -1,40 +1,40 @@
 <section class="card-item flex flex-col gap-4">
-  <div
-    class="h-64 w-64 rounded-xl bg-cover bg-center"
-    [ngStyle]="{ backgroundImage: 'url(' + recipe.imgPath + ')' }"
-  ></div>
+	<div
+		class="h-64 w-64 rounded-xl bg-cover bg-center"
+		[ngStyle]="{ backgroundImage: 'url(' + recipe.imgPath + ')' }"
+	></div>
 
-  <h3>{{ recipe.name }}</h3>
+	<h3>{{ recipe.name }}</h3>
 
-  <p>{{ recipe.description }}</p>
+	<p>{{ recipe.description }}</p>
 
-  <hr />
+	<hr />
 
-  <h4>Ingredients</h4>
+	<h4>Ingredients</h4>
 
-  <ul class="card-item w-2/3">
-    <li *ngFor="let ingredient of recipe.ingredients">
-      {{ ingredient.amount }} {{ ingredient.name }}
-    </li>
-  </ul>
+	<ul class="card-item w-2/3">
+		<li *ngFor="let ingredient of recipe.ingredients">
+			{{ ingredient.amount }} {{ ingredient.name }}
+		</li>
+	</ul>
 
-  <footer toggleController>
-    <app-button size="lg" variant="primary" icon="caret-down" appDropdown>
-      Manage Recipe
-    </app-button>
+	<footer toggleController>
+		<app-button size="lg" variant="primary" icon="caret-down" appDropdown>
+			Manage Recipe
+		</app-button>
 
-    <ul class="menuToggler" toggle>
-      <li>
-        <a (click)="addToList()">Add Ingredients to Shopping List</a>
-      </li>
+		<ul class="menuToggler" toggle>
+			<li>
+				<a (click)="addToList()">Add Ingredients to Shopping List</a>
+			</li>
 
-      <li>
-        <a routerLink="edit">Edit Recipe</a>
-      </li>
+			<li>
+				<a routerLink="edit">Edit Recipe</a>
+			</li>
 
-      <li>
-        <a (click)="deleteRecipe()">Delete Recipe</a>
-      </li>
-    </ul>
-  </footer>
+			<li>
+				<a (click)="deleteRecipe()">Delete Recipe</a>
+			</li>
+		</ul>
+	</footer>
 </section>

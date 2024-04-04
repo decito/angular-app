@@ -1,10 +1,10 @@
-import { Directive, ViewContainerRef } from '@angular/core'
+import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: 'appTemplateComment'
+	selector: 'appTemplateComment'
 })
 export class HtmlCommentDirective {
-  constructor(private vcRef: ViewContainerRef) {
-    this.vcRef.clear()
-  }
+	constructor(private vcRef: ViewContainerRef) {
+		this.vcRef.clear();
+	}
 }

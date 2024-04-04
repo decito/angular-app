@@ -1,33 +1,33 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core'
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
-import type { Colors } from '~/types'
+import type { Colors } from '~/types';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html'
+	selector: 'app-button',
+	templateUrl: './button.component.html'
 })
 export class ButtonComponent implements OnInit, OnChanges {
-  @Input() variant?: Colors = 'primary'
-  @Input() size?: 'sm' | 'lg' | 'full' | 'default' = 'default'
-  @Input() type?: 'button' | 'submit' | 'reset' = 'button'
+	@Input() variant?: Colors = 'primary';
+	@Input() size?: 'sm' | 'lg' | 'full' | 'default' = 'default';
+	@Input() type?: 'button' | 'submit' | 'reset' = 'button';
 
-  @Input() outlined? = false
-  @Input() disabled? = false
+	@Input() outlined? = false;
+	@Input() disabled? = false;
 
-  @Input() icon? = ''
-  @Input() showIcon? = true
+	@Input() icon? = '';
+	@Input() showIcon? = true;
 
-  classes: string
+	classes: string;
 
-  ngOnInit(): void {
-    this.classes = `${this.size} ${this.variant}`
+	ngOnInit(): void {
+		this.classes = `${this.size} ${this.variant}`;
 
-    if (this.outlined) this.classes += ` outlined`
+		if (this.outlined) this.classes += ` outlined`;
 
-    if (this.disabled) this.classes += ` disabled`
-  }
+		if (this.disabled) this.classes += ` disabled`;
+	}
 
-  ngOnChanges(): void {
-    this.ngOnInit()
-  }
+	ngOnChanges(): void {
+		this.ngOnInit();
+	}
 }

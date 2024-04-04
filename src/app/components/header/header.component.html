@@ -1,45 +1,45 @@
 <section class="flex h-full min-w-[16rem] flex-col gap-8 bg-sidebar p-6">
-  <h1 class="text-2xl font-semibold">
-    <a routerLink="/">Recipe Book</a>
-  </h1>
+	<h1 class="text-2xl font-semibold">
+		<a routerLink="/">Recipe Book</a>
+	</h1>
 
-  <nav>
-    <ul class="flex flex-col gap-6">
-      <li *ngFor="let nav of navList" class="rounded-full bg-primary p-2">
-        <a
-          [routerLink]="[nav.routerLink]"
-          class="router-link flex h-full w-full justify-center"
-          routerLinkActive="router-link-active"
-        >
-          {{ nav.name }}
-        </a>
-      </li>
-    </ul>
-  </nav>
+	<nav>
+		<ul class="flex flex-col gap-6">
+			<li *ngFor="let nav of navList" class="rounded-full bg-primary p-2">
+				<a
+					[routerLink]="[nav.routerLink]"
+					class="router-link flex h-full w-full justify-center"
+					routerLinkActive="router-link-active"
+				>
+					{{ nav.name }}
+				</a>
+			</li>
+		</ul>
+	</nav>
 
-  <ul>
-    <li toggleController class="relative">
-      <a appDropdown class="hidden lg:block">
-        Menu
+	<ul>
+		<li toggleController class="relative">
+			<a appDropdown class="hidden lg:block">
+				Menu
 
-        <i class="fa-solid fa-caret-down"></i>
-      </a>
+				<i class="fa-solid fa-caret-down"></i>
+			</a>
 
-      <a appDropdown class="lg:hidden">
-        <i class="fa-solid fa-bars"></i>
-      </a>
+			<a appDropdown class="lg:hidden">
+				<i class="fa-solid fa-bars"></i>
+			</a>
 
-      <ul class="menu-toggler" toggle>
-        <li>
-          <a (click)="onSave()">Save Data</a>
-        </li>
+			<ul class="menu-toggler" toggle>
+				<li>
+					<a (click)="onSave()">Save Data</a>
+				</li>
 
-        <hr class="invisible w-full" />
+				<hr class="invisible w-full" />
 
-        <li>
-          <a (click)="onFetch()">Fetch Data</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
+				<li>
+					<a (click)="onFetch()">Fetch Data</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
 </section>

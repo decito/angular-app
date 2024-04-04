@@ -1,15 +1,15 @@
 <section>
-  <app-shopping-list-edit></app-shopping-list-edit>
+	<app-shopping-list-edit></app-shopping-list-edit>
 
-  <hr class="my-4" />
+	<hr class="my-4" />
 
-  <ul class="flex flex-col gap-2">
-    <a
-      class="card-item-hover px-5 py-4"
-      *ngFor="let ingredient of ingredients; let i = index"
-      (click)="onEditIngredient(i)"
-    >
-      {{ ingredient.name }} ({{ ingredient.amount }})
-    </a>
-  </ul>
+	<ul class="flex flex-col gap-2">
+		<a
+			class="card-item-hover px-5 py-4"
+			*ngFor="let ingredient of ingredients; let i = index"
+			(click)="onEditIngredient(i)"
+		>
+			{{ ingredient.name }} ({{ ingredient.amount }})
+		</a>
+	</ul>
 </section>

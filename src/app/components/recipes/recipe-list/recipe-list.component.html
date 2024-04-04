@@ -1,17 +1,17 @@
 <section class="flex flex-col gap-4">
-  <app-button
-    routerLink="new"
-    size="lg"
-    variant="success"
-    class="w-fit"
-    (click)="onHideTemplate()"
-  >
-    New Recipe
-  </app-button>
+	<app-button
+		routerLink="new"
+		size="lg"
+		variant="success"
+		class="w-fit"
+		(click)="onHideTemplate()"
+	>
+		New Recipe
+	</app-button>
 
-  <app-recipe-item
-    *ngFor="let recipe of recipes; let i = index"
-    [item]="recipe"
-    [index]="i"
-  ></app-recipe-item>
+	<app-recipe-item
+		*ngFor="let recipe of recipes; let i = index"
+		[item]="recipe"
+		[index]="i"
+	></app-recipe-item>
 </section>

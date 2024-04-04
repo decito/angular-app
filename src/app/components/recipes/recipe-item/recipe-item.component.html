@@ -1,18 +1,18 @@
 <section class="w-full">
-  <a
-    [routerLink]="[index]"
-    routerLinkActive="!bg-primary"
-    class="recipe-card card-item-hover"
-  >
-    <div class="flex flex-col justify-between">
-      <h4>{{ item.name }}</h4>
+	<a
+		[routerLink]="[index]"
+		routerLinkActive="!bg-primary"
+		class="recipe-card card-item-hover"
+	>
+		<div class="flex flex-col justify-between">
+			<h4>{{ item.name }}</h4>
 
-      <p>{{ item.description }}</p>
-    </div>
+			<p>{{ item.description }}</p>
+		</div>
 
-    <div
-      class="h-16 w-16 rounded bg-cover bg-center"
-      [ngStyle]="{ backgroundImage: 'url(' + item.imgPath + ')' }"
-    ></div>
-  </a>
+		<div
+			class="h-16 w-16 rounded bg-cover bg-center"
+			[ngStyle]="{ backgroundImage: 'url(' + item.imgPath + ')' }"
+		></div>
+	</a>
 </section>

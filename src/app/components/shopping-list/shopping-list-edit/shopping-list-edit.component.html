@@ -1,43 +1,43 @@
 <form
-  class="flex flex-col gap-4"
-  [formGroup]="ingredientForm"
-  (ngSubmit)="onSubmit()"
+	class="flex flex-col gap-4"
+	[formGroup]="ingredientForm"
+	(ngSubmit)="onSubmit()"
 >
-  <section class="flex gap-2">
-    <div class="flex w-4/12 flex-col">
-      <label for="name">Name</label>
+	<section class="flex gap-2">
+		<div class="flex w-4/12 flex-col">
+			<label for="name">Name</label>
 
-      <input type="text" name="name" formControlName="name" />
-    </div>
+			<input type="text" name="name" formControlName="name" />
+		</div>
 
-    <div class="flex w-1/12 flex-col">
-      <label for="amount">Amount</label>
+		<div class="flex w-1/12 flex-col">
+			<label for="amount">Amount</label>
 
-      <input type="number" name="amount" formControlName="amount" />
-    </div>
-  </section>
+			<input type="number" name="amount" formControlName="amount" />
+		</div>
+	</section>
 
-  <footer class="flex gap-4">
-    <app-button
-      size="lg"
-      [variant]="editMode ? 'warning' : 'success'"
-      type="submit"
-      [disabled]="ingredientForm.invalid"
-    >
-      {{ editMode ? 'Update' : 'Add' }}
-    </app-button>
+	<footer class="flex gap-4">
+		<app-button
+			size="lg"
+			[variant]="editMode ? 'warning' : 'success'"
+			type="submit"
+			[disabled]="ingredientForm.invalid"
+		>
+			{{ editMode ? 'Update' : 'Add' }}
+		</app-button>
 
-    <app-button
-      size="lg"
-      variant="danger"
-      (click)="onDelete()"
-      *ngIf="editMode"
-    >
-      Remove
-    </app-button>
+		<app-button
+			size="lg"
+			variant="danger"
+			(click)="onDelete()"
+			*ngIf="editMode"
+		>
+			Remove
+		</app-button>
 
-    <app-button size="lg" variant="primary" type="reset" (click)="onReset()">
-      Reset
-    </app-button>
-  </footer>
+		<app-button size="lg" variant="primary" type="reset" (click)="onReset()">
+			Reset
+		</app-button>
+	</footer>
 </form>

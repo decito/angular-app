@@ -1,16 +1,16 @@
 <section class="flex gap-8">
-  <app-recipe-list class="w-5/12"></app-recipe-list>
+	<app-recipe-list class="w-5/12"></app-recipe-list>
 
-  <div class="w-7/12">
-    <p
-      *ngIf="!recipeSelected && !hideTemplate"
-      appBasicHighlight
-      highlightColor="success"
-      class="card-item hover:cursor-crosshair"
-    >
-      Select a recipe or hover me
-    </p>
+	<div class="w-7/12">
+		<p
+			*ngIf="!recipeSelected && !hideTemplate"
+			appBasicHighlight
+			highlightColor="success"
+			class="card-item hover:cursor-crosshair"
+		>
+			Select a recipe or hover me
+		</p>
 
-    <router-outlet></router-outlet>
-  </div>
+		<router-outlet></router-outlet>
+	</div>
 </section>
