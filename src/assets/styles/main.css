@@ -4,12 +4,15 @@
 
 @layer base {
   :root {
-    --color-primary: 59 130 246;
+    --color-primary: 217 90 33;
     --color-secondary: 209 213 219;
     --color-success: 34 197 94;
     --color-warning: 234 179 8;
     --color-danger: 239 68 68;
     --color-disabled: 107 114 128;
+    --color-canvas: 208 85 8;
+    --color-sidebar: 208 72 10;
+    --color-card: 213 52 18;
   }
 }
 
@@ -58,7 +61,7 @@
   }
 
   button.secondary.outlined {
-    @apply border-secondary text-secondary hover:bg-secondary hover:text-white;
+    @apply border-secondary text-secondary hover:bg-secondary hover:text-black;
   }
 
   button.success.outlined {
@@ -134,10 +137,6 @@
     @apply font-bold underline;
   }
 
-  .header-text {
-    @apply text-black;
-  }
-
   ul.menuToggler {
     @apply mt-0.5 hidden w-fit flex-col gap-2 rounded border border-blue-700 bg-primary p-2 shadow-lg open:flex;
   }
@@ -151,7 +150,7 @@
   }
 
   .menu-toggler {
-    @apply absolute left-[-7rem] top-11 hidden min-w-[8rem] flex-col items-center gap-2 rounded border border-gray-300 bg-gray-200 p-4 shadow-lg open:flex lg:left-[-4rem];
+    @apply absolute top-11 hidden min-w-[8rem] flex-col items-center gap-2 rounded border border-card/50 bg-card p-4 shadow-lg open:flex;
   }
 }
 
