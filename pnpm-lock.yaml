@@ -53,8 +53,8 @@ devDependencies:
     specifier: 16.1.1
     version: 16.1.1
   '@angular-eslint/builder':
-    specifier: 16.0.3
-    version: 16.0.3(eslint@8.43.0)(typescript@5.0.4)
+    specifier: 17.5.3
+    version: 17.5.3(eslint@8.43.0)(typescript@5.0.4)
   '@angular-eslint/eslint-plugin':
     specifier: 16.0.3
     version: 16.0.3(eslint@8.43.0)(typescript@5.0.4)
@@ -335,20 +335,14 @@ packages:
     transitivePeerDependencies:
       - chokidar
 
-  /@angular-eslint/builder@16.0.3(eslint@8.43.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-pv/CrnOHHOnBqhyBmqUPsIHKXOHYMJztxYJ83tjxeXL5Moyu5e6CBMIQ58UtqmgWfEIA3n7owYy9KvHTJcemyQ==}
+  /@angular-eslint/builder@17.5.3(eslint@8.43.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-DoPCwt8qp5oMkfxY8V3wygf6/E7zzgXkPCwTRhIelklfpB3nYwLnbRSD8G5hueAU4eyASKiIuhR79E996AuUSw==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@nx/devkit': 16.2.2(nx@16.2.2)
       eslint: 8.43.0
-      nx: 16.2.2
       typescript: 5.0.4
-    transitivePeerDependencies:
-      - '@swc-node/register'
-      - '@swc/core'
-      - debug
     dev: true
 
   /@angular-eslint/bundled-angular-compiler@16.0.3:
