@@ -52,7 +52,7 @@
 		"karma-jasmine": "~5.1.0",
 		"karma-jasmine-html-reporter": "~2.1.0",
 		"nx": "16.3.2",
-		"postcss": "^8.4.24",
+		"postcss": "^8.4.31",
 		"prettier": "^3.2.5",
 		"prettier-eslint": "^16.3.0",
 		"prettier-plugin-tailwindcss": "^0.3.0",
